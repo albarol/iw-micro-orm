@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AE5E0333-E2FD-45DA-B64F-6A40C8774AF9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IwMicroOrm.Core</RootNamespace>
+    <AssemblyName>IwMicroOrm.Core</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Mapping\IEntity.cs" />
+    <Compile Include="Mapping\IManyRelation.cs" />
+    <Compile Include="Query\DeleteQuery\Delete.cs" />
+    <Compile Include="Query\DeleteQuery\IDeleteQuery.cs" />
+    <Compile Include="Query\DeleteQuery\Restrictions\DeleteConstraints.cs" />
+    <Compile Include="Query\DeleteQuery\Restrictions\IDeleteConstraintsType.cs" />
+    <Compile Include="Query\DeleteQuery\Restrictions\ILogicalDeleteConstraints.cs" />
+    <Compile Include="Query\InsertQuery\IInsertQuery.cs" />
+    <Compile Include="Query\InsertQuery\Insert.cs" />
+    <Compile Include="Query\IParameterizableStatement.cs" />
+    <Compile Include="Query\Restrictions\Subqueries\ISubQuery.cs" />
+    <Compile Include="Query\Restrictions\Subqueries\ISubQueryConstraintsType.cs" />
+    <Compile Include="Query\Restrictions\Subqueries\SubQueryConstraints.cs" />
+    <Compile Include="Query\SelectQuery\Field.cs" />
+    <Compile Include="Query\SelectQuery\Functions\FunctionStatement.cs" />
+    <Compile Include="Query\SelectQuery\Functions\FunctionType.cs" />
+    <Compile Include="Query\SelectQuery\Groups\GroupByCollection.cs" />
+    <Compile Include="Query\SelectQuery\ISelectQuery.cs" />
+    <Compile Include="Query\ISqlStatement.cs" />
+    <Compile Include="Query\Restrictions\Constraint.cs" />
+    <Compile Include="Query\Restrictions\Constraints.cs" />
+    <Compile Include="Query\SelectQuery\Joins\CrossJoin.cs" />
+    <Compile Include="Query\SelectQuery\Joins\JoinCollection.cs" />
+    <Compile Include="Query\SelectQuery\Joins\JoinStatement.cs" />
+    <Compile Include="Query\SelectQuery\Joins\IJoinType.cs" />
+    <Compile Include="Query\SelectQuery\Joins\JoinTypeFactory.cs" />
+    <Compile Include="Query\SelectQuery\Joins\RightJoin.cs" />
+    <Compile Include="Query\SelectQuery\Joins\RightOuterJoin.cs" />
+    <Compile Include="Query\SelectQuery\Orders\IOrderDirection.cs" />
+    <Compile Include="Query\SelectQuery\Orders\OrderCollection.cs" />
+    <Compile Include="Query\SelectQuery\Orders\OrderDirection.cs" />
+    <Compile Include="Query\Parameter.cs" />
+    <Compile Include="Query\SelectQuery\Restrictions\SelectConstraints.cs" />
+    <Compile Include="Query\SelectQuery\Restrictions\ISelectConstraintsType.cs" />
+    <Compile Include="Query\SelectQuery\Restrictions\ILogicalSelectConstraints.cs" />
+    <Compile Include="Query\SelectQuery\SelectFragment.cs" />
+    <Compile Include="Query\UpdateQuery\UpdateStatementBuilder.cs" />
+    <Compile Include="Query\UpdateQuery\IUpdateQuery.cs" />
+    <Compile Include="Query\UpdateQuery\Restrictions\UpdateConstraints.cs" />
+    <Compile Include="Query\UpdateQuery\Restrictions\IUpdateConstraintsType.cs" />
+    <Compile Include="Query\UpdateQuery\Restrictions\ILogicalUpdateConstraints.cs" />
+    <Compile Include="Query\UpdateQuery\Update.cs" />
+    <Compile Include="Query\Restrictions\ConstraintsCollection.cs" />
+    <Compile Include="Shared\StatementBuilder.cs" />
+    <Compile Include="Shared\PropertyInfoHelper.cs" />
+    <Compile Include="Query\Restrictions\IConstraint.cs" />
+    <Compile Include="Query\SelectQuery\Joins\LeftJoin.cs" />
+    <Compile Include="Query\SelectQuery\Joins\LeftOuterJoin.cs" />
+    <Compile Include="Query\SelectQuery\Joins\Relation.cs" />
+    <Compile Include="Query\SelectQuery\Joins\RelationType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Query\SelectQuery\Joins\InnerJoin.cs" />
+    <Compile Include="Query\SelectQuery\Joins\InvalidJoinException.cs" />
+    <Compile Include="Query\Restrictions\Subqueries\Subquery.cs" />
+    <Compile Include="Query\SelectQuery\Select.cs" />
+    <Compile Include="Query\SqlBuilder.cs" />
+    <Compile Include="Query\DeleteQuery\DeleteStatementBuilder.cs" />
+    <Compile Include="Query\InsertQuery\InsertStatementBuilder.cs" />
+    <Compile Include="Query\SelectQuery\SelectStatementBuilder.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
